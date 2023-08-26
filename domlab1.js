@@ -4,7 +4,6 @@ const taskList = document.getElementById("taskList");
 const clearCompletedButton = document.getElementById("clearCompletion");
 
 addTaskButton.addEventListener("click", addTask);
-clearCompletedButton.addEventListener("click", clearCompletedTasks);
 
 function addTask() {
   const taskText = newTaskInput.value.trim();
@@ -26,6 +25,8 @@ function completeTask(event) {
   const taskItem = event.target.parentNode;
   taskItem.remove();
 }
+
+clearCompletedButton.addEventListener("click", clearCompletedTasks);
 
 function clearCompletedTasks() {
   const completedItems = taskList.querySelectorAll("li");
